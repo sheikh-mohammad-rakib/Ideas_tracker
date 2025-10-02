@@ -1,16 +1,103 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Ideas Tracker
 
-Currently, two official plugins are available:
+A simple React + Vite app for tracking and sharing ideas, with authentication and persistent storage powered by [Appwrite](https://appwrite.io/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+- User authentication (register, login, logout)
+- Submit new ideas (title & description)
+- View latest ideas (10 most recent)
+- Remove your own ideas
+- Responsive, modern UI with Tailwind CSS
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech Stack
 
-## Expanding the ESLint configuration
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Appwrite](https://appwrite.io/) (database & authentication)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Getting Started
+
+### Clone or Fork the Repository
+
+To clone this repository:
+
+```sh
+git clone https://github.com/sheikh-mohammad-rakib/Ideas_tracker.git
+cd Ideas_tracker
+```
+
+To fork, click the "Fork" button on GitHub, then clone your fork:
+
+```sh
+git clone https://github.com/<your-username>/Ideas_tracker.git
+cd Ideas_tracker
+```
+
+### Install Dependencies
+
+Make sure you have [Node.js](https://nodejs.org/) installed. Then run:
+
+```sh
+npm install
+```
+
+### Configure Environment Variables
+
+Copy `.env` and fill in your Appwrite project details.
+
+### Run the Project Locally
+
+Start the development server:
+
+```sh
+npm run dev
+```
+
+### Build for Production
+
+```sh
+npm run build
+```
+
+### Preview Production Build
+
+```sh
+npm run preview
+```
+
+## Project Structure
+
+```
+.env
+.gitignore
+eslint.config.js
+index.html
+package.json
+vite.config.js
+public/
+src/
+  App.jsx
+  main.jsx
+  index.css
+  lib/
+	 appwrite.js
+	 context/
+		user.jsx
+		ideas.jsx
+  pages/
+	 Home.jsx
+	 Login.jsx
+```
+
+## Customization
+
+- Update Appwrite credentials in `.env`.
+- Modify UI styles in `src/index.css` and component files.
+
+## License
+
+MIT

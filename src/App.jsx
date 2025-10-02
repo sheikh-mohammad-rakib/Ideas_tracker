@@ -2,16 +2,20 @@ import { Login } from "./pages/Login";
 import { Home } from "./pages/Home";
 import { UserProvider, useUser } from "./lib/context/user";
 import { IdeasProvider } from "./lib/context/ideas";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const isLoginPage = window.location.pathname === "/login";
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 text-gray-900 pb-10">
       <UserProvider>
         <IdeasProvider>
           <Navbar />
-          <main className="max-w-2xl mx-auto p-4">{isLoginPage ? <Login /> : <Home />}</main>
+          <main className="max-w-2xl mx-auto p-4">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+            </Routes>
+          </main>
         </IdeasProvider>
       </UserProvider>
     </div>
